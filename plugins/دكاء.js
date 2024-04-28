@@ -1,6 +1,6 @@
 
 let handler = async (m, { conn, command, text }) => {
-  let intelligence = `*🧠 نسبة الذكاء 🧠*
+  let intelligence = `*🧠 نسبة ذكاء 🧠*
     *نسبة الذكاء ${text} 🧠 هي* *${Math.floor(Math.random() * 100)}%* *من 100%*
     *استمر في التألق! 🌟*
   `.trim();
