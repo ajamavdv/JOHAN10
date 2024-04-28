@@ -8,20 +8,20 @@ import axios from 'axios';
 import moment from 'moment-timezone';
 
 global.owner = [
-  ['‪22247072475‬', '🔪 JOHAN ', true],
-  ['22247072475', ' 3MK 💸', true],
+  ['‪212630299152', '🔪 𝐒𝐇𝐀𝐍𝐊𝐒 ', true],
+  ['212630299152', ' 3MK 💸', true],
 ];
 
 global.xaxa = 'kana'
-global.suittag = ['22247072475', '22247072475'];
-global.prems = ['22247072475', '22247072475'];
+global.suittag = ['212630299152', '212630299152'];
+global.prems = ['212630299152', '212630299152'];
 
-global.packname = 'Nezuko🧸 ';
-global.author = '★Nezuko🌺★';
-global.wm = '★Nezuko BOT★';
-global.titulowm = ' Nezuko ';
-global.titulowm2 = ` Nezuko `
-global.igfg = ' Nezuko ';
+global.packname = '𝐉𝐎𝐇𝐀𝐍🧸 ';
+global.author = '★𝐉𝐎𝐇𝐀𝐍🌺★';
+global.wm = '★𝐉𝐎𝐇𝐀𝐍 BOT★';
+global.titulowm = ' 𝐉𝐎𝐇𝐀𝐍 ';
+global.titulowm2 = ` 𝐉𝐎𝐇𝐀𝐍 `
+global.igfg = ' 𝐉𝐎𝐇𝐀𝐍 ';
 global.wait = '*⌛ _جاري التحميل..._*\n\n*▰▰▰▱▱▱▱▱*';
 
 global.imagen1 = fs.readFileSync('./Menu2.jpg');
@@ -45,8 +45,8 @@ global.tiempo = d.toLocaleString('en-US', {hour: 'numeric', minute: 'numeric', s
 global.wm2 = `▸ ${dia} ${fecha}\n▸ 𝚃𝚑𝚎 𝙼𝚢𝚜𝚝𝚒𝚌 - 𝙱𝚘𝚝`;
 global.gt = '★JOHAN★';
 global.mysticbot = '★JOHAN★';
-global.md = 'https://chat.whatsapp.com/FE54Nj3CorLAcuEzpXZHA7';
-global.mysticbot = 'https://chat.whatsapp.com/FE54Nj3CorLAcuEzpXZHA7';
+global.md = 'https://chat.whatsapp.com/FCCx6SMky3h3lIXeMlYXbL';
+global.mysticbot = 'https://chat.whatsapp.com/FCCx6SMky3h3lIXeMlYXbL';
 global.waitt = '*⌛ _جاري التحميل..._*\n\n*▰▰▰▱▱▱▱▱*';
 global.waittt = '*⌛ _جاري التحميل..._*\n\n*▰▰▰▱▱▱▱▱*';
 global.waitttt = '*⌛ _جاري التحميل..._*\n\n*▰▰▰▱▱▱▱▱*';
