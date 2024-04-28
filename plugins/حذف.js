@@ -1,12 +1,17 @@
-
-let handler = async (m, { conn, text }) => {
-  let room = Object.values(conn.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))
-if (room == undefined) return conn.reply(m.chat,`هممممممم تهبد? لازم تعمل ريبلاي على رسالة الي تبغى تحذفها!`, m)
-delete conn.game[room.id]
-await conn.reply(m.chat, `تم الحذف`, m)
+let handler = async (m, { conn, usedPrefix, command }) => {	
+    if (!m.quoted) throw `*~✌️[خطأ] يجب الرد على الرسالة التي ترغب في حذفها✌️~*`
+    try {
+        let delet = m.message.extendedTextMessage.contextInfo.participant
+        let bang = m.message.extendedTextMessage.contextInfo.stanzaId
+        return conn.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: bang, participant: delet }})
+    } catch {
+        return conn.sendMessage(m.chat, { delete: m.quoted.vM.key })
+    }
 }
-handler.help = ['delttt']
-handler.tags = ['game']
-handler.command = ['حذف', 'delttt', 'delxo']
-
+handler.help = ['del', 'delete']
+handler.tags = ['group']
+handler.command = /^حذف|احذف$/i
+handler.group = true
+handler.admin = true
+handler.botAdmin = true
 export default handler
