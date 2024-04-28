@@ -1,24 +1,18 @@
-function getRandomParticipant(participants) {
-  const randomIndex = Math.floor(Math.random() * participants.length);
-  return participants[randomIndex];
-}
+let toM = a => '@' + a.split('@')[0];
 
 function handler(m, { groupMetadata }) {
-  const participants = groupMetadata.participants;
-  
-  if (participants.length < 2) {
-    m.reply('*عذرًا، يجب أن يكون هناك على الأقل شخصين في المجموعة لاختيار الزوج والزوجة.*');
-    return;
-  }
-  
-  const groom = getRandomParticipant(participants);
-  let bride;
+  let ps = groupMetadata.participants.map(v => v.id);
+  let a = ps.getRandom();
+  let b;
   
   do {
-    bride = getRandomParticipant(participants);
-  } while (bride === groom);
+    b = ps.getRandom();
+  } while (b === a);
   
-  m.reply(`🎉 الف مبروك للعريس ${groom.id}! 🤵‍♂️\n🎉 الف مبروك للعروسة ${bride.id}! 👰‍♀️`);
+  m.reply(`*تهانينا لـ ${toM(a)}! `❤️‍🔥👰‍♀️🤵` أنتما الآن متزوجين!*
+*${toM(b)}, أنتما زوجين رائعين وأتمنى لكما شهر عسل جميل! 💕*`, null, {
+    mentions: [a, b]
+  });
 }
 
 handler.help = ['formarpareja'];
