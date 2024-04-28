@@ -12,20 +12,13 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     let res = await fetch('https://api.waifu.pics/sfw/bully')
     let uer = m.sender;
 
-    if (!res.ok) throw await res.text()
+    if (!res.ok) throw new Error(await res.text())
 
-    let text = await res.text()
+    let json = await res.json()
 
-    try {
-        let json = JSON.parse(text)
+    if (!json.url) throw `${lenguajeGB['smsAvisoFG']()}`
 
-        if (!json.url) throw `${lenguajeGB['smsAvisoFG']()}`
-        
-        conn.sendFile(m.chat, json.url, 'error.gif', `يــبــدو ان @${uer.split('@')[0]} يــتــنــمــر عــلــي @${who.split`@`[0]} 😭👆🏻`, m, null, { mentions: [who,uer]})
-
-    } catch (error) {
-        throw error
-    }
+    conn.sendFile(m.chat, json.url, 'error.gif', `يــبــدو ان @${uer.split('@')[0]} يــتــنــمــر عــلــي @${who.split('@')[0]} 😭👆🏻`, m, null, { mentions: [who, uer] })
 }
 
 handler.help = ['ترفيه']
