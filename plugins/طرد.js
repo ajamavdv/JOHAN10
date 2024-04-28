@@ -9,7 +9,7 @@ let handler = async (m, { conn, participants, usedPrefix, command }) => {
   let groupID = m.chat.split("-")[0];
 
   await conn.groupParticipantsUpdate(groupID, [user], "remove");
-  m.reply("`*تم الطرد!*`");
+  m.reply("`تم الطرد بنجاح`");
 };
 
 handler.help = ["kick @user"];
