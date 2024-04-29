@@ -1,10 +1,10 @@
 let axios = require('axios')
 
 let handler = async (m, { conn }) => {
-    if (!m.text.includes('صباح الخير')) return // يتأكد من وجود كلمة "صباح الخير" في الرسالة
+    if (!m.text.includes('استدعاء')) return // يتأكد من وجود كلمة "صباح الخير" في الرسالة
 
     // يقوم بالرد برسالة "صباح النور!"
-    await conn.reply(m.chat, 'صباح النور!', m)
+    await conn.reply(m.chat, '`حاضر`', m)
 
     // يقوم بجلب صورة صباحية
     let res = await axios.get('https://source.unsplash.com/featured/?morning', { responseType: 'arraybuffer' })
