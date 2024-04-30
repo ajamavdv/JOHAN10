@@ -14,15 +14,15 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
                 {
                   name: 'single_select',
                   buttonParamsJson: JSON.stringify({
-                    title: 'دوس عليا 💔',
+                    title: '~`اضعط هنا`~',
                     sections: [
                       {
                         title: 'List',
                         highlight_label: 'ON',
                         rows: [
                           {
-                            header: '☘️ قـسـم الـنـظـام',
-                            title: '.النظام_كود',
+                            header: 'زواج',
+                            title: '.طلاق',
                             description: '',
                             id: 'te'
                           },
