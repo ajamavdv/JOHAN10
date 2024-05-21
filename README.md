@@ -15,4 +15,4 @@
 [![WhatsApp](https://img.shields.io/badge/قناة-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://whatsapp.com/channel/0029VaUTbPnBKfhygQtsJh35)
 
 ## `creds.json لاخذ ملف`
-[![Cheems Bot](https://repl.it/badge/github/quiec/whatsasena)](https://replit.com/@kofdemon87/LUFF-BOT?v=1)
+[![Cheems Bot](https://repl.it/badge/github/quiec/whatsasena)](https://replit.com/@kofdemon87/Nezuko-pair)
