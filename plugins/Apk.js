@@ -1,4 +1,4 @@
-import { download } from 'aptoide-scraper';
+const { download } = require('aptoide-scraper');
 
 let handler = async (m, { conn, usedPrefix: prefix, command, text }) => {
   try {
@@ -22,10 +22,10 @@ let handler = async (m, { conn, usedPrefix: prefix, command, text }) => {
         { quoted: m }
       );
     }
-  } catch {
-    throw `*اكتب اسم التطبيق✌️*`;
+  } catch (error) {
+    throw `*حدث خطأ أثناء تنفيذ الأمر: ${error.message}*`;
   }
 };
 
 handler.command = /^تطبيق$/i;
-export default handler;
+module.exports = handler;
