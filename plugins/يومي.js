@@ -1,8 +1,8 @@
 
 //import db from '../lib/database.js'
 
-const free = 7000
-const prem = 200000
+const free = 70000
+const prem = 20000000
 
 let handler = async (m, {conn, isPrems }) => {
   let time = global.db.data.users[m.sender].lastclaim + 86400000
