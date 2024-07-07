@@ -19,7 +19,7 @@ let handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, isPr
     let uptime = clockString(_uptime)
 let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 if (!(who in global.db.data.users)) throw `✳️ The user is not found in my database`
-let videoUrl = 'https://telegra.ph/file/e0f22f8c1dc033a7df6a5.jpg';
+let videoUrl = 'https://telegra.ph/file/a2d579cc8fda5cdd42c86.mp4';
   let vn = './media/menu.mp3';
   const user = global.db.data.users[m.sender];
   const {money, joincount} = global.db.data.users[m.sender];
@@ -90,18 +90,18 @@ let str = `> 𝗝𝗢𝗛𝗔𝗡-𝗕𝗢𝗧
 
 *~✯¦الـمطـور فـقط¦✯~*
 
-*ಠ_ಠ 💠│ضيف_بريميام*
-*ಠ_ಠ 💠│حذف_بريميام*
-*ಠ_ಠ 💠│بان*
-*ಠ_ಠ 💠│الغاء_البان*
-*ಠ_ಠ 💠│اطفاء*
-*ಠ_ಠ 💠│تفعيل*
-*ಠ_ಠ 💠│المبندين*
-*ಠ_ಠ 💠│إعادة*
-*ಠ_ಠ 💠│اعادةتشغيل*
-*ಠ_ಠ 💠│أدخل*
-*ಠ_ಠ 💠│ضيف_اكس_بي*
-*ಠ_ಠ 💠│ضيف_جواهر*
+*💠│ضيف_بريميام*
+*💠│حذف_بريميام*
+*💠│بان*
+*💠│الغاء_البان*
+*💠│اطفاء*
+*💠│تفعيل*
+*💠│المبندين*
+*💠│إعادة*
+*💠│اعادةتشغيل*
+*💠│أدخل*
+*💠│ضيف_اكس_بي*
+*💠│ضيف_جواهر*
 
 *~🕳 💤│الـتـنزيـل│💤🕳~*
 
