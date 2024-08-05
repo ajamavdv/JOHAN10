@@ -36,7 +36,7 @@ let readMore = more.repeat(900)
   const taguser = '@' +  m.sender.split('@s.whatsapp.net')[0];
 let str = `> 𝗝𝗢𝗛𝗔𝗡-𝗕𝗢𝗧 
 
- *مرحباا,* ${taguser}
+*مرحبااا,* ${taguser}
 
  *~< إحصائياتك />~*
 
