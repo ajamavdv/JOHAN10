@@ -1,46 +1,17 @@
-import axios from 'axios'
-import fs from 'fs'
-import path from 'path'
+import fs from 'fs'; // استيراد وحدة fs لعمليات نظام الملفات
 
 let handler = async (m, { text, usedPrefix, command }) => {
-  if (!text) throw `Please provide a plugin URL`
+    if (!text) throw `أين النص؟\n\nالاستخدام:\n${usedPrefix + command} <النص>\n\nمثال:\n${usedPrefix + command} القائمة`;
+    if (!m.quoted.text) throw `رد على الرسالة!`;
+    let path = `plugins/${text}.js`; // تعريف مسار الملف بناءً على النص المعطى
+    await fs.writeFileSync(path, m.quoted.text); // كتابة النص المقتبس إلى المسار المحدد
+    m.reply(`تم الحفظ في ${path}`); // الرد برسالة تأكيد
+};
 
-  // Extract the Gist ID from the URL
-  const gistId = text.match(/(?:\/|gist\.github\.com\/)([a-fA-F0-9]+)/)
+handler.help = ['sfp'].map(v => v + ' <النص>'); // رسالة المساعدة للأمر
+handler.tags = ['owner']; // العلامات المرتبطة بالأمر
+handler.command = /^sfp$/i; // التعبير العادي لتشغيل الأمر
 
-  if (!gistId) throw `Invalid plugin URL`
+handler.rowner = true; // إشارة إلى أن هذا الأمر مخصص للمالك
 
-  const gistName = gistId[1]
-  const gistURL = `https://api.github.com/gists/${gistName}`
-
-  try {
-    const response = await axios.get(gistURL)
-    const gistData = response.data
-
-    if (!gistData || !gistData.files) {
-      throw `No valid files found in the Gist`
-    }
-
-    for (const file of Object.values(gistData.files)) {
-      // Use the Gist file name as the plugin name
-      const pluginName = file.filename
-
-      // Construct the path to save the plugin
-      const pluginPath = path.join('plugins', `${pluginName}`)
-
-      // Write the Gist file content to the plugin file
-      await fs.promises.writeFile(pluginPath, file.content)
-      m.reply(`successfully installed the plugin to Guru Bot`)
-    }
-  } catch (error) {
-    throw `Error fetching or saving the plugin: ${error.message}`
-  }
-}
-
-handler.help = ['install'].map(v => v + ' <Gist URL>')
-handler.tags = ['plugin']
-handler.command = /^sfp$/i
-
-handler.owner = true
-
-export default handler
+export default handler; // تصدير وظيفة معالج الأمر
